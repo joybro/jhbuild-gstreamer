@@ -1,0 +1,28 @@
+_basepath = os.path.dirname(__file__)
+
+moduleset = os.path.join(_basepath, 'selected.modules')
+
+modules = ['my-all']
+
+checkoutroot = os.path.join(_basepath, 'build')
+prefix = os.path.join(_basepath, 'install')
+
+# those modules are not really useful...
+skip = ['pitivi', 'thoggen', 'gst-plugins-farsight']
+# ... and, the gl plugin seems to be often broken, too
+skip.append('gst-plugins-gl')
+# ... and, the schroedinger has been merged
+skip.append('schroedinger')
+
+build_policy = 'updated-deps'
+
+autogenargs = ''
+autogenargs += ' --disable-static'
+autogenargs += ' --cache-file=' + checkoutroot + '/autoconf-cache'
+
+os.environ['INSTALL'] = os.path.expanduser('~/local/bin/install-check')
+
+addpath('ACLOCAL_FLAGS', '/usr/share/aclocal')
+addpath('ACLOCAL_FLAGS', prefix + '/share/aclocal')
+addpath('PKG_CONFIG_PATH', '/usr/lib/pkgconfig')
+addpath('PKG_CONFIG_PATH', '/usr/share/pkgconfig')

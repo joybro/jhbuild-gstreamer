@@ -1,0 +1,50 @@
+<?xml version="1.0" standalone="no"?> <!--*- mode: nxml -*-->
+
+<!DOCTYPE moduleset SYSTEM "moduleset.dtd">
+<?xml-stylesheet type="text/xsl" href="moduleset.xsl"?>
+<moduleset>
+
+  <!-- use the following include if you don't want to check out the
+       gstreamer's jhbuild.git module yourself -->
+  <include href="http://cgit.freedesktop.org/gstreamer/jhbuild/plain/gstreamer.modules" />
+
+  <!-- ... otherwise use the following include if you do want to check
+       out the gstreamer's jhbuild.git module yourself -->
+  <!-- <include href="jhbuild.git/gstreamer.modules" /> -->
+
+  <repository type="svn" name="fluendo"
+      href="https://svn.fluendo.com/gstreamer/svn/"/>
+
+  <autotools id="gst-fluendo-mpegdemux">
+    <dependencies>
+      <dep package="gstreamer" />
+      <dep package="gst-plugins-base" />
+    </dependencies>
+    <branch repo="fluendo" module="trunk/gst-fluendo-mpegdemux"
+            checkoutdir="gst-fluendo-mpegdemux" />
+  </autotools>
+
+  <autotools id="gst-fluendo-mpegmux">
+    <dependencies>
+      <dep package="gstreamer" />
+      <dep package="gst-plugins-base" />
+    </dependencies>
+    <branch repo="fluendo" module="trunk/gst-fluendo-mpegmux"
+            checkoutdir="gst-fluendo-mpegmux" />
+  </autotools>
+
+
+  <metamodule id="fluendo-public">
+    <dependencies>
+      <dep package="gst-fluendo-mpegdemux" />
+      <dep package="gst-fluendo-mpegmux" />
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="my-all">
+    <dependencies>
+      <dep package="gst-all" />
+      <dep package="fluendo-public" />
+    </dependencies>
+  </metamodule>
+</moduleset>
