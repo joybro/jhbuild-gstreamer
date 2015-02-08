@@ -1,0 +1,200 @@
+<?xml version="1.0" standalone="no"?> <!--*- mode: nxml -*-->
+
+<!DOCTYPE moduleset SYSTEM "moduleset.dtd">
+<?xml-stylesheet type="text/xsl" href="moduleset.xsl"?>
+<moduleset>
+  <repository type="git" name="git.freedesktop.org"
+      href="git://anongit.freedesktop.org/git/"/>
+  <repository type="git" name="gstreamer"
+      href="git://anongit.freedesktop.org/git/gstreamer/"/>
+  <repository type="git" name="collabora"
+      href="git://git.collabora.co.uk/git/"/>
+  <repository type="git" name="pitivi"
+      href="git://git.pitivi.org/git/"/>
+  <repository type="git" name="entropywave"
+      href="git://code.entropywave.com/git/"/>
+  <repository type="git" name="diracvideo"
+      href="git://diracvideo.schleef.org/git/"/>
+  <repository type="svn" name="carid"
+      href="https://svn.fluendo.com/carid/svn/"/>
+  <repository type="svn" name="fluendo"
+      href="https://svn.fluendo.com/gstreamer/svn/"/>
+  <repository type="svn" name="elisa"
+      href="https://code.fluendo.com/elisa/svn/"/>
+  <repository type="arch" name="seamless"
+     archive="soto@freedesktop.org--2004-personal"
+     href="http://mirrors.sourcecontrol.net/soto@freedesktop.org--2004-personal/" />
+  <repository type="svn" name="thoggen"
+      href="https://thoggen.svn.sourceforge.net/svnroot/"/>
+  <repository type="svn" name="wikimedia"
+      href="http://svn.wikimedia.org/svnroot/"/>
+
+  <autotools id="orc">
+    <branch repo="entropywave" module="orc" checkoutdir="orc" />
+  </autotools>
+
+  <autotools id="liboil">
+    <branch repo="git.freedesktop.org" module="liboil.git" checkoutdir="liboil" />
+  </autotools>
+
+  <autotools id="gstreamer">
+    <branch repo="gstreamer" module="gstreamer" checkoutdir="gstreamer" />
+  </autotools>
+
+  <autotools id="gst-plugins-base">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="liboil"/>
+    </dependencies>
+    <branch repo="gstreamer" module="gst-plugins-base" checkoutdir="gst-plugins-base"/>
+  </autotools>
+
+  <autotools id="gst-plugins-good">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+    </dependencies>
+    <branch repo="gstreamer" module="gst-plugins-good" checkoutdir="gst-plugins-good"/>
+  </autotools>
+
+  <autotools id="gst-plugins-bad">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+    </dependencies>
+    <branch repo="gstreamer" module="gst-plugins-bad" checkoutdir="gst-plugins-bad"/>
+  </autotools>
+
+  <autotools id="gst-plugins-ugly">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+    </dependencies>
+    <branch repo="gstreamer" module="gst-plugins-ugly" checkoutdir="gst-plugins-ugly"/>
+  </autotools>
+
+  <autotools id="gst-plugins-gl">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+    </dependencies>
+    <branch repo="gstreamer" module="gst-plugins-gl" checkoutdir="gst-plugins-gl"/>
+  </autotools>
+
+  <autotools id="gst-ffmpeg">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+    </dependencies>
+    <branch repo="gstreamer" module="gst-ffmpeg" checkoutdir="gst-ffmpeg"/>
+  </autotools>
+
+  <autotools id="gnonlin">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+    </dependencies>
+    <branch repo="gstreamer" module="gnonlin" checkoutdir="gnonlin"/>
+  </autotools>
+
+  <autotools id="gst-python">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+    </dependencies>
+    <branch repo="gstreamer" module="gst-python" checkoutdir="gst-python"/>
+  </autotools>
+
+  <autotools id="pitivi">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-python"/>
+      <dep package="gnonlin"/>
+    </dependencies>
+    <branch repo="pitivi" module="pitivi.git" checkoutdir="pitivi"/>
+  </autotools>
+
+  <autotools id="schroedinger">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+      <dep package="orc"/>
+      <dep package="liboil"/>
+    </dependencies>
+    <branch repo="diracvideo" module="schroedinger.git" checkoutdir="schroedinger"/>
+  </autotools>
+
+  <autotools id="gst-fluendo-mp3">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+    </dependencies>
+    <branch repo="fluendo" module="trunk/gst-fluendo-mp3" checkoutdir="gst-fluendo-mp3"/>
+  </autotools>
+
+  <autotools id="elisa">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+      <dep package="gst-python"/>
+    </dependencies>
+    <branch repo="elisa" module="trunk/elisa" checkoutdir="elisa"/>
+  </autotools>
+
+  <autotools id="seamless">
+    <dependencies>
+    </dependencies>
+    <branch repo="seamless" module="seamless" checkoutdir="seamless"/>
+  </autotools>
+
+  <autotools id="thoggen">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+    </dependencies>
+    <branch repo="thoggen" module="thoggen/trunk/thoggen" checkoutdir="thoggen"/>
+  </autotools>
+
+  <autotools id="gst-plugins-farsight">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+    </dependencies>
+    <branch repo="collabora" module="gst-plugins-farsight" checkoutdir="gst-plugins-farsight"/>
+  </autotools>
+
+  <!--
+       <ant id="cortado">
+         <branch repo="wikimedia" module="mediawiki/trunk/cortado" checkoutdir="cortado"/>
+       </ant>
+  -->
+
+  <metamodule id="gst-all">
+    <dependencies>
+      <dep package="liboil"/>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+      <dep package="gst-plugins-good"/>
+      <dep package="gst-plugins-bad"/>
+      <dep package="gst-plugins-ugly"/>
+      <dep package="gst-plugins-gl"/>
+      <dep package="gst-ffmpeg"/>
+      <dep package="gnonlin"/>
+      <dep package="gst-python"/>
+      <dep package="pitivi"/>
+      <dep package="schroedinger"/>
+      <dep package="gst-fluendo-mp3"/>
+      <dep package="thoggen"/>
+      <dep package="gst-plugins-farsight"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="broken">
+    <dependencies>
+      <dep package="elisa"/>
+      <dep package="seamless"/>
+    </dependencies>
+  </metamodule>
+
+</moduleset>
+
