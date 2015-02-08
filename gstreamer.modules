@@ -21,9 +21,6 @@
       href="https://svn.fluendo.com/gstreamer/svn/"/>
   <repository type="svn" name="elisa"
       href="https://code.fluendo.com/elisa/svn/"/>
-  <repository type="arch" name="seamless"
-     archive="soto@freedesktop.org--2004-personal"
-     href="http://mirrors.sourcecontrol.net/soto@freedesktop.org--2004-personal/" />
   <repository type="svn" name="thoggen"
       href="https://thoggen.svn.sourceforge.net/svnroot/"/>
   <repository type="svn" name="wikimedia"
@@ -141,12 +138,6 @@
     <branch repo="elisa" module="trunk/elisa" checkoutdir="elisa"/>
   </autotools>
 
-  <autotools id="seamless">
-    <dependencies>
-    </dependencies>
-    <branch repo="seamless" module="seamless" checkoutdir="seamless"/>
-  </autotools>
-
   <autotools id="thoggen">
     <dependencies>
       <dep package="gstreamer"/>
@@ -192,7 +183,6 @@
   <metamodule id="broken">
     <dependencies>
       <dep package="elisa"/>
-      <dep package="seamless"/>
     </dependencies>
   </metamodule>
 
