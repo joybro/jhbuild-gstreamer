@@ -1,4 +1,4 @@
-Building all the gstreamer + fluendo's public plugins with jhbuild
+Building basic gstreamer modules with jhbuild
 ==================================================================
 
  * Build and install jhbuild from GNOME svn
@@ -7,12 +7,3 @@ Building all the gstreamer + fluendo's public plugins with jhbuild
    set of plugins to build
 
  * run 'jg build'
-
-
-Note: by default the official gstreamer moduleset is taken straight
-from the net every time you run 'jg'. If you want to be more
-independent you can run
-
-  'git clone git://anongit.freedesktop.org/gstreamer/jhbuild jhbuild.git'
-
-and change the includes at the top of the 'selected.modules'.
