@@ -1,8 +1,12 @@
 # Building gstreamer modules with jhbuild
 
-- Build and install jhbuild from GNOME svn
-- You might want to edit the 'gstreamer.jhbuildrc' to fine-tune the set of plugins to build
-- run 'jg build'
+## Prerequisites
+
+- Instaling [jhbuild](https://developer.gnome.org/jhbuild/stable/getting-started.html.en#getting-started-install)
+
+## Build
+
+- Run 'jg build'
 
 # Credit
 
