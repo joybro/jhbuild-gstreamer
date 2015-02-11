@@ -9,6 +9,16 @@
 - Run 'jg build' to build latest gstreamer
 - Run 'jg shell' to have latest gstreamer environment
 
+### Gstreamer shell mark
+
+You can add the following code to your bash configure file to distinguish your gstreamer shell from normal shell.
+```
+if [ -n "$UNDER_JHBUILD" ]; then
+  PS1="[jhbuild] $PS1"
+fi
+```
+
+
 # Credit
 
 This project is forked from https://github.com/arkadini/jhbuild-gstreamer
