@@ -1,0 +1,21 @@
+<?xml version="1.0" standalone="no"?> <!--*- mode: nxml -*-->
+
+<!DOCTYPE moduleset SYSTEM "moduleset.dtd">
+<?xml-stylesheet type="text/xsl" href="moduleset.xsl"?>
+<moduleset>
+  <repository type="git" name="git.gnome.org"
+      href="git://git.gnome.org/" />
+
+  <autotools id="gtk-doc">
+    <dependencies>
+      <dep package="libxslt"/>
+    </dependencies>
+    <branch repo="git.gnome.org" module="gtk-doc" checkoutdir="gtk-doc"/>
+  </autotools>
+  <autotools id="glib">
+    <dependencies>
+      <dep package="gtk-doc"/>
+    </dependencies>
+    <branch repo="git.gnome.org" module="glib" checkoutdir="glib"/>
+  </autotools>
+</moduleset>

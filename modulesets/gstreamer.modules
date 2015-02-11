@@ -3,6 +3,8 @@
 <!DOCTYPE moduleset SYSTEM "moduleset.dtd">
 <?xml-stylesheet type="text/xsl" href="moduleset.xsl"?>
 <moduleset>
+  <include href="glib.modules"/>
+
   <repository type="git" name="git.freedesktop.org"
       href="git://anongit.freedesktop.org/git/"/>
   <repository type="git" name="gstreamer"
@@ -35,6 +37,9 @@
   </autotools>
 
   <autotools id="gstreamer">
+    <dependencies>
+      <dep package="glib"/>
+    </dependencies>
     <branch repo="gstreamer" module="gstreamer" checkoutdir="gstreamer" />
   </autotools>
 
@@ -154,6 +159,14 @@
     <branch repo="collabora" module="gst-plugins-farsight" checkoutdir="gst-plugins-farsight"/>
   </autotools>
 
+  <autotools id="gst-devtools">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+    </dependencies>
+    <branch repo="gstreamer" module="gst-devtools.git" checkoutdir="gst-devtools" subdir="validate"/>
+  </autotools>
+
   <!--
        <ant id="cortado">
          <branch repo="wikimedia" module="mediawiki/trunk/cortado" checkoutdir="cortado"/>
@@ -177,6 +190,7 @@
       <dep package="gst-fluendo-mp3"/>
       <dep package="thoggen"/>
       <dep package="gst-plugins-farsight"/>
+      <dep package="gst-devtools"/>
     </dependencies>
   </metamodule>
 
