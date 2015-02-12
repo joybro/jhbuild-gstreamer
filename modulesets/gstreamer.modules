@@ -75,6 +75,14 @@
     <branch repo="gstreamer" module="gst-plugins-ugly" checkoutdir="gst-plugins-ugly"/>
   </autotools>
 
+  <autotools id="gst-libav">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+    </dependencies>
+    <branch repo="gstreamer" module="gst-libav" checkoutdir="gst-libav"/>
+  </autotools>
+
   <autotools id="gst-plugins-gl">
     <dependencies>
       <dep package="gstreamer"/>
@@ -181,6 +189,7 @@
       <dep package="gst-plugins-good"/>
       <dep package="gst-plugins-bad"/>
       <dep package="gst-plugins-ugly"/>
+      <dep package="gst-libav"/>
       <dep package="gst-plugins-gl"/>
       <dep package="gst-ffmpeg"/>
       <dep package="gnonlin"/>
