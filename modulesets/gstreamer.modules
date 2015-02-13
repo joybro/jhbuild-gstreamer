@@ -32,10 +32,6 @@
     <branch repo="entropywave" module="orc" checkoutdir="orc" />
   </autotools>
 
-  <autotools id="liboil">
-    <branch repo="git.freedesktop.org" module="liboil.git" checkoutdir="liboil" />
-  </autotools>
-
   <autotools id="gstreamer">
     <dependencies>
       <dep package="glib"/>
@@ -46,7 +42,6 @@
   <autotools id="gst-plugins-base">
     <dependencies>
       <dep package="gstreamer"/>
-      <dep package="liboil"/>
     </dependencies>
     <branch repo="gstreamer" module="gst-plugins-base" checkoutdir="gst-plugins-base"/>
   </autotools>
@@ -129,7 +124,6 @@
       <dep package="gstreamer"/>
       <dep package="gst-plugins-base"/>
       <dep package="orc"/>
-      <dep package="liboil"/>
     </dependencies>
     <branch repo="diracvideo" module="schroedinger.git" checkoutdir="schroedinger"/>
   </autotools>
@@ -183,7 +177,6 @@
 
   <metamodule id="gst-all">
     <dependencies>
-      <dep package="liboil"/>
       <dep package="gstreamer"/>
       <dep package="gst-plugins-base"/>
       <dep package="gst-plugins-good"/>
