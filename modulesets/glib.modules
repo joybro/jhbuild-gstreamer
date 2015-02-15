@@ -7,9 +7,6 @@
       href="git://git.gnome.org/" />
 
   <autotools id="gtk-doc">
-    <dependencies>
-      <dep package="libxslt"/>
-    </dependencies>
     <branch repo="git.gnome.org" module="gtk-doc" checkoutdir="gtk-doc"/>
   </autotools>
   <autotools id="glib">
