@@ -20,3 +20,4 @@ addpath('PKG_CONFIG_PATH', '/usr/share/pkgconfig')
 
 # custom CFLAGS for OSX gcc
 os.environ['CFLAGS'] = '-Wno-typedef-redefinition -Wno-error=unused-command-line-argument'
+os.environ['OBJCFLAGS'] = '-Wno-error=deprecated-declarations'
