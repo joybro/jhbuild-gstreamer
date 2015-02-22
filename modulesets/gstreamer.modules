@@ -27,9 +27,20 @@
       href="https://thoggen.svn.sourceforge.net/svnroot/"/>
   <repository type="svn" name="wikimedia"
       href="http://svn.wikimedia.org/svnroot/"/>
+  <repository type="tarball" name="xiph"
+      href="http://downloads.xiph.org/releases/"/>
 
   <autotools id="orc">
     <branch repo="entropywave" module="orc" checkoutdir="orc" />
+  </autotools>
+
+  <autotools id="libogg">
+    <branch repo="xiph"
+            module="ogg/libogg-1.3.2.tar.gz"
+            version="1.3.2"
+            hash="sha256:e19ee34711d7af328cb26287f4137e70630e7261b17cbe3cd41011d73a654692"
+            size="550250"
+            checkoutdir="libogg"/>
   </autotools>
 
   <autotools id="gstreamer">
@@ -41,6 +52,7 @@
 
   <autotools id="gst-plugins-base">
     <dependencies>
+      <dep package="libogg"/>
       <dep package="gstreamer"/>
     </dependencies>
     <branch repo="gstreamer" module="gst-plugins-base" checkoutdir="gst-plugins-base"/>
