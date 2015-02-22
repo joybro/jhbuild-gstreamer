@@ -19,5 +19,7 @@ addpath('PKG_CONFIG_PATH', '/usr/lib/pkgconfig')
 addpath('PKG_CONFIG_PATH', '/usr/share/pkgconfig')
 
 # custom CFLAGS for OSX gcc
-os.environ['CFLAGS'] = '-Wno-typedef-redefinition -Wno-error=unused-command-line-argument'
-os.environ['OBJCFLAGS'] = '-Wno-error=deprecated-declarations'
+from sys import platform as _platform
+if _platform == "darwin":
+  os.environ['CFLAGS'] = '-Wno-typedef-redefinition -Wno-error=unused-command-line-argument'
+  os.environ['OBJCFLAGS'] = '-Wno-error=deprecated-declarations'
