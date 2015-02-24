@@ -3,6 +3,8 @@
 <!DOCTYPE moduleset SYSTEM "moduleset.dtd">
 <?xml-stylesheet type="text/xsl" href="moduleset.xsl"?>
 <moduleset>
+  <include href="gnu.modules"/>
+
   <repository type="tarball" name="github.gnome"
       href="https://github.com/GNOME/"/>
 
@@ -14,10 +16,25 @@
             checkoutdir="gtk-doc"/>
   </autotools>
 
+  <autotools id="glib-networking">
+    <dependencies>
+      <dep package="glib"/>
+      <dep package="gnutls"/>
+    </dependencies>
+    <branch repo="github.gnome"
+            module="glib-networking/archive/2.43.1.tar.gz"
+            version="2.43.1"
+            size="186374"
+            checkoutdir="glib-networking"/>
+  </autotools>
+
   <autotools id="glib">
     <dependencies>
       <dep package="gtk-doc"/>
     </dependencies>
+    <suggests>
+      <dep package="glib-networking"/>
+    </suggests>
     <branch repo="github.gnome"
             module="glib/archive/2.43.90.tar.gz"
             version="2.43.90"

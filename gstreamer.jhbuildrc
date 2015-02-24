@@ -10,7 +10,6 @@ prefix = os.path.join(_basepath, 'install')
 build_policy = 'updated-deps'
 
 autogenargs = ''
-autogenargs += ' --disable-static'
 autogenargs += ' --cache-file=' + checkoutroot + '/autoconf-cache'
 
 os.environ['INSTALL'] = os.path.expanduser('~/local/bin/install-check')

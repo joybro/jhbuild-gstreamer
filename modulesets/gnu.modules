@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="no"?> <!--*- mode: nxml -*-->
+
+<!DOCTYPE moduleset SYSTEM "moduleset.dtd">
+<?xml-stylesheet type="text/xsl" href="moduleset.xsl"?>
+<moduleset>
+  <repository type="tarball" name="ftp.gnu.org"
+      href="https://ftp.gnu.org/gnu/"/>
+  <repository type="tarball" name="gnutls-mirror"
+      href="http://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/gnutls/"/>
+
+  <autotools id="nettle">
+    <branch repo="ftp.gnu.org"
+            module="nettle/nettle-2.7.1.tar.gz"
+            version="2.7.1"
+            size="1558863"
+            checkoutdir="nettle"/>
+  </autotools>
+
+  <autotools id="gnutls">
+    <dependencies>
+      <dep package="nettle"/>
+    </dependencies>
+    <branch repo="gnutls-mirror"
+            module="v3.3/gnutls-3.3.12.tar.xz"
+            version="3.3.12"
+            size="6185624"
+            checkoutdir="gnutls"/>
+  </autotools>
+</moduleset>

@@ -29,6 +29,8 @@
       href="http://svn.wikimedia.org/svnroot/"/>
   <repository type="tarball" name="xiph"
       href="http://downloads.xiph.org/releases/"/>
+  <repository type="tarball" name="libsoup"
+      href="https://github.com/GNOME/libsoup/archive/"/>
 
   <autotools id="orc">
     <branch repo="entropywave" module="orc" checkoutdir="orc" />
@@ -61,6 +63,20 @@
             checkoutdir="libvorbis"/>
   </autotools>
 
+  <autotools id="libsoup">
+    <dependencies>
+      <dep package="glib"/>
+    </dependencies>
+    <suggests>
+      <dep package="glib-networking"/>
+    </suggests>
+    <branch repo="libsoup"
+            module="2.48.1.tar.gz"
+            version="2.48.1"
+            size="2146475"
+            checkoutdir="libsoup"/>
+  </autotools>
+
   <autotools id="gstreamer">
     <dependencies>
       <dep package="glib"/>
@@ -80,6 +96,7 @@
 
   <autotools id="gst-plugins-good">
     <dependencies>
+      <dep package="libsoup"/>
       <dep package="gstreamer"/>
       <dep package="gst-plugins-base"/>
     </dependencies>
