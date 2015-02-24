@@ -3,16 +3,25 @@
 <!DOCTYPE moduleset SYSTEM "moduleset.dtd">
 <?xml-stylesheet type="text/xsl" href="moduleset.xsl"?>
 <moduleset>
-  <repository type="git" name="git.gnome.org"
-      href="git://git.gnome.org/" />
+  <repository type="tarball" name="github.gnome"
+      href="https://github.com/GNOME/"/>
 
   <autotools id="gtk-doc">
-    <branch repo="git.gnome.org" module="gtk-doc" checkoutdir="gtk-doc"/>
+    <branch repo="github.gnome"
+            module="gtk-doc/archive/GTK_DOC_1_21.tar.gz"
+            version="1.21"
+            size="827345"
+            checkoutdir="gtk-doc"/>
   </autotools>
+
   <autotools id="glib">
     <dependencies>
       <dep package="gtk-doc"/>
     </dependencies>
-    <branch repo="git.gnome.org" module="glib" checkoutdir="glib"/>
+    <branch repo="github.gnome"
+            module="glib/archive/2.43.90.tar.gz"
+            version="2.43.90"
+            size="7481630"
+            checkoutdir="glib"/>
   </autotools>
 </moduleset>
