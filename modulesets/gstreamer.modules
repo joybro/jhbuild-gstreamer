@@ -214,6 +214,10 @@
     <dependencies>
       <dep package="gstreamer"/>
       <dep package="gst-plugins-base"/>
+      <dep package="gst-plugins-good"/>
+      <dep package="gst-plugins-bad"/>
+      <dep package="gst-plugins-ugly"/>
+      <dep package="gst-libav"/>
     </dependencies>
     <branch repo="gstreamer" module="gst-devtools.git" checkoutdir="gst-devtools" subdir="validate"/>
   </autotools>
