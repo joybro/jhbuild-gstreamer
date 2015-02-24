@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- Instaling [jhbuild](https://developer.gnome.org/jhbuild/stable/getting-started.html.en#getting-started-install) (Note that section 2.1 is all you need and you don't need to run remains)
+- Installing [jhbuild](https://developer.gnome.org/jhbuild/stable/getting-started.html.en#getting-started-install) (Note that section 2.1 is all you need and you don't need to run remains)
 
 ## Build & Run
 
