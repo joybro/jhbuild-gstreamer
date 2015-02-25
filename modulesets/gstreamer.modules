@@ -29,6 +29,8 @@
       href="http://svn.wikimedia.org/svnroot/"/>
   <repository type="tarball" name="xiph"
       href="http://downloads.xiph.org/releases/"/>
+  <repository type="tarball" name="sqlite"
+      href="http://www.sqlite.org/"/>
   <repository type="tarball" name="libsoup"
       href="https://github.com/GNOME/libsoup/archive/"/>
 
@@ -63,9 +65,18 @@
             checkoutdir="libvorbis"/>
   </autotools>
 
+  <autotools id="sqlite3">
+    <branch repo="sqlite"
+            module="2015/sqlite-autoconf-3080802.tar.gz"
+            version="3.8.8.2"
+            size="2021091"
+            checkoutdir="sqlite3"/>
+  </autotools>
+
   <autotools id="libsoup">
     <dependencies>
       <dep package="glib"/>
+      <dep package="sqlite3"/>
     </dependencies>
     <suggests>
       <dep package="glib-networking"/>
