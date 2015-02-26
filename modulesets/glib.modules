@@ -7,6 +7,15 @@
 
   <repository type="tarball" name="github.gnome"
       href="https://github.com/GNOME/"/>
+  <repository type="tarball" name="sourceware.org-mirror"
+      href="http://mirrors.kernel.org/sources.redhat.com/"/>
+
+  <autotools id="libffi" autogen-sh="configure">
+    <branch module="libffi/libffi-3.1.tar.gz" version="3.1"
+             repo="sourceware.org-mirror"
+             hash="sha256:97feeeadca5e21870fa4433bc953d1b3af3f698d5df8a428f68b73cd60aef6eb"
+             md5sum="f5898b29bbfd70502831a212d9249d10"/>
+  </autotools>
 
   <autotools id="glib-networking">
     <dependencies>
@@ -21,6 +30,9 @@
   </autotools>
 
   <autotools id="glib">
+    <dependencies>
+      <dep package="libffi"/>
+    </dependencies>
     <suggests>
       <dep package="glib-networking"/>
     </suggests>
