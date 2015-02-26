@@ -8,14 +8,6 @@
   <repository type="tarball" name="github.gnome"
       href="https://github.com/GNOME/"/>
 
-  <autotools id="gtk-doc">
-    <branch repo="github.gnome"
-            module="gtk-doc/archive/GTK_DOC_1_21.tar.gz"
-            version="1.21"
-            size="827345"
-            checkoutdir="gtk-doc"/>
-  </autotools>
-
   <autotools id="glib-networking">
     <dependencies>
       <dep package="glib"/>
@@ -29,9 +21,6 @@
   </autotools>
 
   <autotools id="glib">
-    <dependencies>
-      <dep package="gtk-doc"/>
-    </dependencies>
     <suggests>
       <dep package="glib-networking"/>
     </suggests>

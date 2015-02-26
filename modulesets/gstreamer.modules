@@ -88,14 +88,14 @@
             checkoutdir="libsoup"/>
   </autotools>
 
-  <autotools id="gstreamer">
+  <autotools id="gstreamer" autogenargs="--disable-gtk-doc">
     <dependencies>
       <dep package="glib"/>
     </dependencies>
     <branch repo="gstreamer" module="gstreamer" checkoutdir="gstreamer" />
   </autotools>
 
-  <autotools id="gst-plugins-base">
+  <autotools id="gst-plugins-base" autogenargs="--disable-gtk-doc">
     <dependencies>
       <dep package="libogg"/>
       <dep package="libtheora"/>
@@ -105,7 +105,7 @@
     <branch repo="gstreamer" module="gst-plugins-base" checkoutdir="gst-plugins-base"/>
   </autotools>
 
-  <autotools id="gst-plugins-good">
+  <autotools id="gst-plugins-good" autogenargs="--disable-gtk-doc">
     <dependencies>
       <dep package="libsoup"/>
       <dep package="gstreamer"/>
@@ -114,7 +114,7 @@
     <branch repo="gstreamer" module="gst-plugins-good" checkoutdir="gst-plugins-good"/>
   </autotools>
 
-  <autotools id="gst-plugins-bad">
+  <autotools id="gst-plugins-bad" autogenargs="--disable-gtk-doc">
     <dependencies>
       <dep package="gstreamer"/>
       <dep package="gst-plugins-base"/>
@@ -122,7 +122,7 @@
     <branch repo="gstreamer" module="gst-plugins-bad" checkoutdir="gst-plugins-bad"/>
   </autotools>
 
-  <autotools id="gst-plugins-ugly">
+  <autotools id="gst-plugins-ugly" autogenargs="--disable-gtk-doc">
     <dependencies>
       <dep package="gstreamer"/>
       <dep package="gst-plugins-base"/>
@@ -130,7 +130,7 @@
     <branch repo="gstreamer" module="gst-plugins-ugly" checkoutdir="gst-plugins-ugly"/>
   </autotools>
 
-  <autotools id="gst-libav">
+  <autotools id="gst-libav" autogenargs="--disable-gtk-doc">
     <dependencies>
       <dep package="gstreamer"/>
       <dep package="gst-plugins-base"/>
