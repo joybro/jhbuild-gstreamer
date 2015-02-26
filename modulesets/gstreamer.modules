@@ -53,7 +53,9 @@
             version="1.1.1"
             hash="sha256:b6ae1ee2fa3d42ac489287d3ec34c5885730b1296f0801ae577a35193d3affbc"
             size="1903175"
-            checkoutdir="libtheora"/>
+            checkoutdir="libtheora">
+      <patch file="libtheora-1.1.1-drop-fforce-addr-cflags.patch"/>
+    </branch>
   </autotools>
 
   <autotools id="libvorbis">
