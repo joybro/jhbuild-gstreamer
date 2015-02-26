@@ -8,6 +8,14 @@
   <repository type="tarball" name="gnutls-mirror"
       href="http://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/gnutls/"/>
 
+  <autotools id="bison">
+    <branch repo="ftp.gnu.org"
+            module="bison/bison-3.0.4.tar.xz"
+            version="3.0.4"
+            size="1973796"
+            checkoutdir="bison"/>
+  </autotools>
+
   <autotools id="nettle">
     <branch repo="ftp.gnu.org"
             module="nettle/nettle-2.7.1.tar.gz"
