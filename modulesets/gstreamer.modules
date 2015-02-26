@@ -48,6 +48,12 @@
   </autotools>
 
   <autotools id="libtheora">
+    <dependencies>
+      <dep package="libogg"/>
+    </dependencies>
+    <suggests>
+      <dep package="libvorbis"/>
+    </suggests>
     <branch repo="xiph"
             module="theora/libtheora-1.1.1.tar.bz2"
             version="1.1.1"
