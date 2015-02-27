@@ -7,6 +7,8 @@
       href="https://ftp.gnu.org/gnu/"/>
   <repository type="tarball" name="gnutls-mirror"
       href="http://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/gnutls/"/>
+  <repository type="tarball" name="gmplib.org"
+      href="https://gmplib.org/download/gmp/"/>
 
   <autotools id="bison">
     <branch repo="ftp.gnu.org"
@@ -16,7 +18,18 @@
             checkoutdir="bison"/>
   </autotools>
 
+  <autotools id="gmp">
+    <branch repo="gmplib.org"
+            module="gmp-6.0.0a.tar.xz"
+            version="6.0.0a"
+            size="1904112"
+            checkoutdir="gmp"/>
+  </autotools>
+
   <autotools id="nettle">
+    <dependencies>
+      <dep package="gmp"/>
+    </dependencies>
     <branch repo="ftp.gnu.org"
             module="nettle/nettle-2.7.1.tar.gz"
             version="2.7.1"
