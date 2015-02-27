@@ -61,6 +61,7 @@
             size="1903175"
             checkoutdir="libtheora">
       <patch file="libtheora-1.1.1-drop-fforce-addr-cflags.patch"/>
+      <patch file="libtheora-1.1.1-dont-use-png-sizeof.patch"/>
     </branch>
   </autotools>
 
