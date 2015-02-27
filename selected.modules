@@ -3,10 +3,12 @@
 <!DOCTYPE moduleset SYSTEM "moduleset.dtd">
 <?xml-stylesheet type="text/xsl" href="moduleset.xsl"?>
 <moduleset>
+  <include href="modulesets/buildtools.modules" />
   <include href="modulesets/gstreamer.modules" />
 
   <metamodule id="my-gst">
     <dependencies>
+      <dep package="buildtools"/>
       <dep package="gstreamer"/>
       <dep package="gst-plugins-base"/>
       <dep package="gst-plugins-good"/>

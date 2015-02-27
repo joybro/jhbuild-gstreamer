@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="no"?> <!--*- mode: nxml -*-->
+
+<!DOCTYPE moduleset SYSTEM "moduleset.dtd">
+<?xml-stylesheet type="text/xsl" href="moduleset.xsl"?>
+<moduleset>
+  <include href="gnu.modules"/>
+
+  <repository type="system" name="system"/>
+
+  <systemmodule id="xz">
+    <branch repo="system"/>
+    <systemdependencies>
+      <dep type="path" name="xz"/>
+    </systemdependencies>
+  </systemmodule>
+
+  <metamodule id="buildtools">
+    <dependencies>
+      <dep package="xz"/>
+    </dependencies>
+  </metamodule>
+</moduleset>
