@@ -1,5 +1,5 @@
 #!/bin/sh
 
-BASE=$(dirname `readlink -f $0`)
+BASE="$(cd "$(dirname "$0")"; pwd)"
 
 jhbuild -f "$BASE/gstreamer.jhbuildrc" "$@"
