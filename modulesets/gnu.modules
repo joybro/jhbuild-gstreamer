@@ -23,7 +23,9 @@
             module="gmp-6.0.0a.tar.xz"
             version="6.0.0a"
             size="1904112"
-            checkoutdir="gmp"/>
+            checkoutdir="gmp">
+      <patch file="gmp-6.0.0-workaround-for-darwin-assembler-quirk.patch" strip="1"/>
+    </branch>
   </autotools>
 
   <autotools id="nettle">
