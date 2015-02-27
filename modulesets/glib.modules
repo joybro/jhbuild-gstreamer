@@ -17,7 +17,7 @@
              md5sum="f5898b29bbfd70502831a212d9249d10"/>
   </autotools>
 
-  <autotools id="glib-networking">
+  <autotools id="glib-networking" autogenargs="--without-ca-certificates">
     <dependencies>
       <dep package="glib"/>
       <dep package="gnutls"/>
