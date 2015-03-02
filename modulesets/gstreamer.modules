@@ -33,6 +33,8 @@
       href="http://www.sqlite.org/"/>
   <repository type="tarball" name="libsoup"
       href="https://github.com/GNOME/libsoup/archive/"/>
+  <repository type="tarball" name="webm.googlecode.com"
+      href="https://webm.googlecode.com/files/"/>
 
   <autotools id="orc">
     <branch repo="entropywave" module="orc" checkoutdir="orc" />
@@ -97,6 +99,15 @@
             checkoutdir="libsoup"/>
   </autotools>
 
+  <autotools id="libvpx"
+             autogen-template="./configure --prefix=%(prefix)s --enable-vp8 --enable-vp9 --enable-shared --disable-static">
+    <branch repo="webm.googlecode.com"
+            module="libvpx-v1.3.0.tar.bz2"
+            version="1.3.0"
+            size="2084229"
+            checkoutdir="libvpx"/>
+  </autotools>
+
   <autotools id="gstreamer" autogenargs="--disable-gtk-doc">
     <dependencies>
       <dep package="bison"/>
@@ -118,6 +129,7 @@
   <autotools id="gst-plugins-good" autogenargs="--disable-gtk-doc">
     <dependencies>
       <dep package="libsoup"/>
+      <dep package="libvpx"/>
       <dep package="gstreamer"/>
       <dep package="gst-plugins-base"/>
     </dependencies>
