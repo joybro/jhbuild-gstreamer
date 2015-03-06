@@ -13,8 +13,6 @@
       href="git://git.collabora.co.uk/git/"/>
   <repository type="git" name="pitivi"
       href="git://git.pitivi.org/git/"/>
-  <repository type="git" name="entropywave"
-      href="git://code.entropywave.com/git/"/>
   <repository type="git" name="diracvideo"
       href="git://diracvideo.schleef.org/git/"/>
   <repository type="svn" name="carid"
@@ -37,7 +35,7 @@
       href="https://webm.googlecode.com/files/"/>
 
   <autotools id="orc">
-    <branch repo="entropywave" module="orc" checkoutdir="orc" />
+    <branch repo="gstreamer" module="orc" checkoutdir="orc"/>
   </autotools>
 
   <autotools id="libogg">
@@ -118,6 +116,7 @@
 
   <autotools id="gst-plugins-base" autogenargs="--disable-gtk-doc">
     <dependencies>
+      <dep package="orc"/>
       <dep package="libogg"/>
       <dep package="libtheora"/>
       <dep package="libvorbis"/>
