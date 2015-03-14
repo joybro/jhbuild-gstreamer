@@ -9,6 +9,8 @@
       href="https://github.com/GNOME/"/>
   <repository type="tarball" name="sourceware.org-mirror"
       href="http://mirrors.kernel.org/sources.redhat.com/"/>
+  <repository type="tarball" name="ftp.gnome.org"
+      href="http://ftp.gnome.org"/>
 
   <autotools id="libffi" autogen-sh="configure">
     <branch module="libffi/libffi-3.1.tar.gz" version="3.1"
@@ -41,5 +43,15 @@
             version="2.43.90"
             size="7481630"
             checkoutdir="glib"/>
+  </autotools>
+
+  <autotools id="gtk-doc" autogen-sh="configure">
+    <dependencies>
+      <dep package="glib"/>
+    </dependencies>
+    <branch module="/pub/GNOME/sources/gtk-doc/1.20/gtk-doc-1.20.tar.xz"
+            version ="1.20"
+            repo="ftp.gnome.org"
+            hash="sha256:3e6ecf134dbf92a74c24d79848fea3a48e59ab95408a38c6405905d95a293011"/>
   </autotools>
 </moduleset>

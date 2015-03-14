@@ -85,6 +85,7 @@
   <autotools id="libsoup">
     <dependencies>
       <dep package="glib"/>
+      <dep package="gtk-doc"/>
       <dep package="sqlite3"/>
     </dependencies>
     <suggests>
