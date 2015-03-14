@@ -7,6 +7,13 @@
 
   <repository type="system" name="system"/>
 
+  <systemmodule id="libtool">
+    <branch repo="system"/>
+    <systemdependencies>
+      <dep type="path" name="libtool"/>
+    </systemdependencies>
+  </systemmodule>
+
   <systemmodule id="xz">
     <branch repo="system"/>
     <systemdependencies>
@@ -16,6 +23,7 @@
 
   <metamodule id="buildtools">
     <dependencies>
+      <dep package="libtool"/>
       <dep package="xz"/>
     </dependencies>
   </metamodule>
