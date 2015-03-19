@@ -34,7 +34,7 @@
   <repository type="tarball" name="webm.googlecode.com"
       href="https://webm.googlecode.com/files/"/>
 
-  <autotools id="orc">
+  <autotools id="orc" autogenargs="--disable-gtk-doc">
     <branch repo="gstreamer" module="orc" checkoutdir="orc"/>
   </autotools>
 
