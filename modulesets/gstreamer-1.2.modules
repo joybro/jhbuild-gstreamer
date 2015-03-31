@@ -1,0 +1,94 @@
+<?xml version="1.0" standalone="no"?> <!--*- mode: nxml -*-->
+
+<!DOCTYPE moduleset SYSTEM "moduleset.dtd">
+<?xml-stylesheet type="text/xsl" href="moduleset.xsl"?>
+<moduleset>
+  <include href="glib.modules"/>
+  <include href="etc.modules"/>
+
+  <repository type="git" name="gstreamer"
+      href="git://anongit.freedesktop.org/git/gstreamer/"/>
+
+  <autotools id="orc" autogenargs="--disable-gtk-doc">
+    <branch repo="gstreamer" module="orc" checkoutdir="orc"/>
+  </autotools>
+
+  <autotools id="gstreamer" autogenargs="--disable-gtk-doc">
+    <dependencies>
+      <dep package="bison"/>
+      <dep package="glib"/>
+    </dependencies>
+    <branch repo="gstreamer" module="gstreamer" checkoutdir="gstreamer" tag="1.2.4"/>
+  </autotools>
+
+  <autotools id="gst-plugins-base" autogenargs="--disable-gtk-doc">
+    <dependencies>
+      <dep package="orc"/>
+      <dep package="libogg"/>
+      <dep package="libtheora"/>
+      <dep package="libvorbis"/>
+      <dep package="gstreamer"/>
+    </dependencies>
+    <branch repo="gstreamer" module="gst-plugins-base" checkoutdir="gst-plugins-base" tag="1.2.4"/>
+  </autotools>
+
+  <autotools id="gst-plugins-good" autogenargs="--disable-gtk-doc">
+    <dependencies>
+      <dep package="libsoup"/>
+      <dep package="libvpx"/>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+    </dependencies>
+    <branch repo="gstreamer" module="gst-plugins-good" checkoutdir="gst-plugins-good" tag="1.2.4"/>
+  </autotools>
+
+  <autotools id="gst-plugins-bad" autogenargs="--disable-gtk-doc">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+    </dependencies>
+    <branch repo="gstreamer" module="gst-plugins-bad" checkoutdir="gst-plugins-bad" tag="1.2.4"/>
+  </autotools>
+
+  <autotools id="gst-plugins-ugly" autogenargs="--disable-gtk-doc">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+    </dependencies>
+    <branch repo="gstreamer" module="gst-plugins-ugly" checkoutdir="gst-plugins-ugly" tag="1.2.4"/>
+  </autotools>
+
+  <autotools id="gst-libav" autogenargs="--disable-gtk-doc">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+    </dependencies>
+    <branch repo="gstreamer" module="gst-libav" checkoutdir="gst-libav" tag="1.2.4"/>
+  </autotools>
+
+  <autotools id="gst-devtools">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+      <dep package="gst-plugins-good"/>
+      <dep package="gst-plugins-bad"/>
+      <dep package="gst-plugins-ugly"/>
+      <dep package="gst-libav"/>
+    </dependencies>
+    <branch repo="gstreamer" module="gst-devtools.git" checkoutdir="gst-devtools" subdir="validate" tag="validate-1.3.90"/>
+  </autotools>
+
+  <metamodule id="gst-1.2">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+      <dep package="gst-plugins-good"/>
+      <dep package="gst-plugins-bad"/>
+      <dep package="gst-plugins-ugly"/>
+      <dep package="gst-libav"/>
+      <dep package="gst-devtools"/>
+    </dependencies>
+  </metamodule>
+
+</moduleset>
+

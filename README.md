@@ -14,7 +14,7 @@
 You can add the following code to your bash configure file to distinguish your gstreamer shell from normal shell.
 ```
 if [ -n "$UNDER_JHBUILD" ]; then
-  PS1="[jhbuild] $PS1"
+  PS1="[jhbuild$GST_VERSION] $PS1"
 fi
 ```
 
