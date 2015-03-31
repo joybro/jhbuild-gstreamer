@@ -5,26 +5,8 @@
 <moduleset>
   <include href="glib.modules"/>
 
-  <repository type="git" name="git.freedesktop.org"
-      href="git://anongit.freedesktop.org/git/"/>
   <repository type="git" name="gstreamer"
       href="git://anongit.freedesktop.org/git/gstreamer/"/>
-  <repository type="git" name="collabora"
-      href="git://git.collabora.co.uk/git/"/>
-  <repository type="git" name="pitivi"
-      href="git://git.pitivi.org/git/"/>
-  <repository type="git" name="diracvideo"
-      href="git://diracvideo.schleef.org/git/"/>
-  <repository type="svn" name="carid"
-      href="https://svn.fluendo.com/carid/svn/"/>
-  <repository type="svn" name="fluendo"
-      href="https://svn.fluendo.com/gstreamer/svn/"/>
-  <repository type="svn" name="elisa"
-      href="https://code.fluendo.com/elisa/svn/"/>
-  <repository type="svn" name="thoggen"
-      href="https://thoggen.svn.sourceforge.net/svnroot/"/>
-  <repository type="svn" name="wikimedia"
-      href="http://svn.wikimedia.org/svnroot/"/>
   <repository type="tarball" name="xiph"
       href="http://downloads.xiph.org/releases/"/>
   <repository type="tarball" name="sqlite"
@@ -159,89 +141,6 @@
     <branch repo="gstreamer" module="gst-libav" checkoutdir="gst-libav"/>
   </autotools>
 
-  <autotools id="gst-plugins-gl">
-    <dependencies>
-      <dep package="gstreamer"/>
-      <dep package="gst-plugins-base"/>
-    </dependencies>
-    <branch repo="gstreamer" module="gst-plugins-gl" checkoutdir="gst-plugins-gl"/>
-  </autotools>
-
-  <autotools id="gst-ffmpeg">
-    <dependencies>
-      <dep package="gstreamer"/>
-      <dep package="gst-plugins-base"/>
-    </dependencies>
-    <branch repo="gstreamer" module="gst-ffmpeg" checkoutdir="gst-ffmpeg"/>
-  </autotools>
-
-  <autotools id="gnonlin">
-    <dependencies>
-      <dep package="gstreamer"/>
-      <dep package="gst-plugins-base"/>
-    </dependencies>
-    <branch repo="gstreamer" module="gnonlin" checkoutdir="gnonlin"/>
-  </autotools>
-
-  <autotools id="gst-python">
-    <dependencies>
-      <dep package="gstreamer"/>
-      <dep package="gst-plugins-base"/>
-    </dependencies>
-    <branch repo="gstreamer" module="gst-python" checkoutdir="gst-python"/>
-  </autotools>
-
-  <autotools id="pitivi">
-    <dependencies>
-      <dep package="gstreamer"/>
-      <dep package="gst-python"/>
-      <dep package="gnonlin"/>
-    </dependencies>
-    <branch repo="pitivi" module="pitivi.git" checkoutdir="pitivi"/>
-  </autotools>
-
-  <autotools id="schroedinger">
-    <dependencies>
-      <dep package="gstreamer"/>
-      <dep package="gst-plugins-base"/>
-      <dep package="orc"/>
-    </dependencies>
-    <branch repo="diracvideo" module="schroedinger.git" checkoutdir="schroedinger"/>
-  </autotools>
-
-  <autotools id="gst-fluendo-mp3">
-    <dependencies>
-      <dep package="gstreamer"/>
-      <dep package="gst-plugins-base"/>
-    </dependencies>
-    <branch repo="fluendo" module="trunk/gst-fluendo-mp3" checkoutdir="gst-fluendo-mp3"/>
-  </autotools>
-
-  <autotools id="elisa">
-    <dependencies>
-      <dep package="gstreamer"/>
-      <dep package="gst-plugins-base"/>
-      <dep package="gst-python"/>
-    </dependencies>
-    <branch repo="elisa" module="trunk/elisa" checkoutdir="elisa"/>
-  </autotools>
-
-  <autotools id="thoggen">
-    <dependencies>
-      <dep package="gstreamer"/>
-      <dep package="gst-plugins-base"/>
-    </dependencies>
-    <branch repo="thoggen" module="thoggen/trunk/thoggen" checkoutdir="thoggen"/>
-  </autotools>
-
-  <autotools id="gst-plugins-farsight">
-    <dependencies>
-      <dep package="gstreamer"/>
-      <dep package="gst-plugins-base"/>
-    </dependencies>
-    <branch repo="collabora" module="gst-plugins-farsight" checkoutdir="gst-plugins-farsight"/>
-  </autotools>
-
   <autotools id="gst-devtools">
     <dependencies>
       <dep package="gstreamer"/>
@@ -254,13 +153,7 @@
     <branch repo="gstreamer" module="gst-devtools.git" checkoutdir="gst-devtools" subdir="validate"/>
   </autotools>
 
-  <!--
-       <ant id="cortado">
-         <branch repo="wikimedia" module="mediawiki/trunk/cortado" checkoutdir="cortado"/>
-       </ant>
-  -->
-
-  <metamodule id="gst-all">
+  <metamodule id="gst">
     <dependencies>
       <dep package="gstreamer"/>
       <dep package="gst-plugins-base"/>
@@ -268,22 +161,7 @@
       <dep package="gst-plugins-bad"/>
       <dep package="gst-plugins-ugly"/>
       <dep package="gst-libav"/>
-      <dep package="gst-plugins-gl"/>
-      <dep package="gst-ffmpeg"/>
-      <dep package="gnonlin"/>
-      <dep package="gst-python"/>
-      <dep package="pitivi"/>
-      <dep package="schroedinger"/>
-      <dep package="gst-fluendo-mp3"/>
-      <dep package="thoggen"/>
-      <dep package="gst-plugins-farsight"/>
       <dep package="gst-devtools"/>
-    </dependencies>
-  </metamodule>
-
-  <metamodule id="broken">
-    <dependencies>
-      <dep package="elisa"/>
     </dependencies>
   </metamodule>
 
