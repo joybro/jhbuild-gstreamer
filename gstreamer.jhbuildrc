@@ -1,8 +1,8 @@
 _basepath = os.path.dirname(__file__)
 
-moduleset = os.path.join(_basepath, 'selected.modules')
+moduleset = [os.path.join(_basepath, 'modulesets/buildtools.modules'), os.path.join(_basepath, 'modulesets/gstreamer.modules')]
 
-modules = ['my-gst']
+modules = ['buildtools', 'gst']
 
 checkoutroot = os.path.join(_basepath, 'build')
 prefix = os.path.join(_basepath, 'install')
