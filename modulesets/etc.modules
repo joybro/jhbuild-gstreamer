@@ -1,0 +1,85 @@
+<?xml version="1.0" standalone="no"?> <!--*- mode: nxml -*-->
+
+<!DOCTYPE moduleset SYSTEM "moduleset.dtd">
+<?xml-stylesheet type="text/xsl" href="moduleset.xsl"?>
+<moduleset>
+  <include href="glib.modules"/>
+
+  <repository type="tarball" name="xiph"
+      href="http://downloads.xiph.org/releases/"/>
+  <repository type="tarball" name="sqlite"
+      href="http://www.sqlite.org/"/>
+  <repository type="tarball" name="libsoup"
+      href="https://github.com/GNOME/libsoup/archive/"/>
+  <repository type="tarball" name="webm.googlecode.com"
+      href="https://webm.googlecode.com/files/"/>
+
+  <autotools id="libogg">
+    <branch repo="xiph"
+            module="ogg/libogg-1.3.2.tar.gz"
+            version="1.3.2"
+            hash="sha256:e19ee34711d7af328cb26287f4137e70630e7261b17cbe3cd41011d73a654692"
+            size="550250"
+            checkoutdir="libogg"/>
+  </autotools>
+
+  <autotools id="libtheora">
+    <dependencies>
+      <dep package="libogg"/>
+    </dependencies>
+    <suggests>
+      <dep package="libvorbis"/>
+    </suggests>
+    <branch repo="xiph"
+            module="theora/libtheora-1.1.1.tar.bz2"
+            version="1.1.1"
+            hash="sha256:b6ae1ee2fa3d42ac489287d3ec34c5885730b1296f0801ae577a35193d3affbc"
+            size="1903175"
+            checkoutdir="libtheora">
+      <patch file="libtheora-1.1.1-drop-fforce-addr-cflags.patch"/>
+      <patch file="libtheora-1.1.1-dont-use-png-sizeof.patch"/>
+    </branch>
+  </autotools>
+
+  <autotools id="libvorbis">
+    <branch repo="xiph"
+            module="vorbis/libvorbis-1.3.4.tar.xz"
+            version="1.3.4"
+            hash="sha256:2f05497d29195dc23ee952a24ee3973a74e6277569c4c2eca0ec5968e541f372"
+            size="1091376"
+            checkoutdir="libvorbis"/>
+  </autotools>
+
+  <autotools id="sqlite3">
+    <branch repo="sqlite"
+            module="2015/sqlite-autoconf-3080802.tar.gz"
+            version="3.8.8.2"
+            size="2021091"
+            checkoutdir="sqlite3"/>
+  </autotools>
+
+  <autotools id="libsoup">
+    <dependencies>
+      <dep package="glib"/>
+      <dep package="sqlite3"/>
+    </dependencies>
+    <suggests>
+      <dep package="glib-networking"/>
+    </suggests>
+    <branch repo="libsoup"
+            module="2.48.1.tar.gz"
+            version="2.48.1"
+            size="2146475"
+            checkoutdir="libsoup"/>
+  </autotools>
+
+  <autotools id="libvpx"
+             autogen-template="./configure --prefix=%(prefix)s --enable-vp8 --enable-vp9 --enable-shared --disable-static">
+    <branch repo="webm.googlecode.com"
+            module="libvpx-v1.3.0.tar.bz2"
+            version="1.3.0"
+            size="2084229"
+            checkoutdir="libvpx"/>
+  </autotools>
+
+</moduleset>
