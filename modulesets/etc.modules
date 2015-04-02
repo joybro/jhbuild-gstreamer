@@ -70,7 +70,9 @@
             module="2.48.1.tar.gz"
             version="2.48.1"
             size="2146475"
-            checkoutdir="libsoup"/>
+            checkoutdir="libsoup">
+      <patch file="libsoup-disable-gtk-doc.patch" strip="1"/>
+    </branch>
   </autotools>
 
   <autotools id="libvpx"
