@@ -76,7 +76,7 @@
   </autotools>
 
   <autotools id="libvpx"
-             autogen-template="./configure --prefix=%(prefix)s --enable-vp8 --enable-vp9 --enable-shared --disable-static">
+             autogen-template="./configure --prefix=%(prefix)s --enable-vp8 --enable-vp9">
     <branch repo="webm.googlecode.com"
             module="libvpx-v1.3.0.tar.bz2"
             version="1.3.0"
