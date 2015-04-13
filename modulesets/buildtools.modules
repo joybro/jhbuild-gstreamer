@@ -14,9 +14,17 @@
     </systemdependencies>
   </systemmodule>
 
+  <systemmodule id="zlib">
+    <branch repo="system"/>
+    <systemdependencies>
+      <dep type="c_include" name="zlib.h" />
+    </systemdependencies>
+  </systemmodule>
+
   <metamodule id="buildtools">
     <dependencies>
       <dep package="xz"/>
+      <dep package="zlib"/>
     </dependencies>
   </metamodule>
 </moduleset>
