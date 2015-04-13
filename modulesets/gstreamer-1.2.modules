@@ -16,6 +16,7 @@
   <autotools id="gstreamer" autogenargs="--disable-gtk-doc">
     <dependencies>
       <dep package="bison"/>
+      <dep package="flex"/>
       <dep package="glib"/>
     </dependencies>
     <branch repo="gstreamer" module="gstreamer" checkoutdir="gstreamer" tag="1.2.4"/>

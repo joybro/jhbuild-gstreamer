@@ -5,6 +5,7 @@
 <moduleset>
   <include href="glib.modules"/>
 
+  <repository type="system" name="system"/>
   <repository type="tarball" name="xiph"
       href="http://downloads.xiph.org/releases/"/>
   <repository type="tarball" name="sqlite"
@@ -58,9 +59,15 @@
             checkoutdir="sqlite3"/>
   </autotools>
 
+  <systemmodule id="libxml2">
+    <pkg-config>libxml-2.0.pc</pkg-config>
+    <branch repo="system"/>
+  </systemmodule>
+
   <autotools id="libsoup">
     <dependencies>
       <dep package="glib"/>
+      <dep package="libxml2"/>
       <dep package="sqlite3"/>
     </dependencies>
     <suggests>
@@ -75,8 +82,18 @@
     </branch>
   </autotools>
 
+  <systemmodule id="yasm">
+    <branch repo="system"/>
+    <systemdependencies>
+      <dep type="path" name="yasm"/>
+    </systemdependencies>
+  </systemmodule>
+
   <autotools id="libvpx"
              autogen-template="./configure --prefix=%(prefix)s --enable-vp8 --enable-vp9 --enable-shared --disable-static">
+    <dependencies>
+      <dep package="yasm"/>
+    </dependencies>
     <branch repo="webm.googlecode.com"
             module="libvpx-v1.3.0.tar.bz2"
             version="1.3.0"
@@ -84,4 +101,10 @@
             checkoutdir="libvpx"/>
   </autotools>
 
+  <systemmodule id="flex">
+    <branch repo="system"/>
+    <systemdependencies>
+      <dep type="path" name="flex"/>
+    </systemdependencies>
+  </systemmodule>
 </moduleset>

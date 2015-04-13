@@ -7,6 +7,13 @@
 
   <repository type="system" name="system"/>
 
+  <systemmodule id="autopoint">
+    <branch repo="system"/>
+    <systemdependencies>
+      <dep type="path" name="autopoint"/>
+    </systemdependencies>
+  </systemmodule>
+
   <systemmodule id="xz">
     <branch repo="system"/>
     <systemdependencies>
@@ -16,6 +23,7 @@
 
   <metamodule id="buildtools">
     <dependencies>
+      <dep package="autopoint"/>
       <dep package="xz"/>
       <dep package="zlib"/>
     </dependencies>
