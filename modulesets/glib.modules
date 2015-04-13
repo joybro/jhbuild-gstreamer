@@ -5,6 +5,7 @@
 <moduleset>
   <include href="gnu.modules"/>
 
+  <repository type="system" name="system"/>
   <repository type="tarball" name="github.gnome"
       href="https://github.com/GNOME/"/>
   <repository type="tarball" name="sourceware.org-mirror"
@@ -29,9 +30,17 @@
             checkoutdir="glib-networking"/>
   </autotools>
 
+  <systemmodule id="zlib">
+    <branch repo="system"/>
+    <systemdependencies>
+      <dep type="c_include" name="zlib.h" />
+    </systemdependencies>
+  </systemmodule>
+
   <autotools id="glib">
     <dependencies>
       <dep package="libffi"/>
+      <dep package="zlib"/>
     </dependencies>
     <suggests>
       <dep package="glib-networking"/>
