@@ -67,7 +67,7 @@
     <branch repo="gstreamer" module="gst-libav" checkoutdir="gst-libav" tag="1.2.4"/>
   </autotools>
 
-  <autotools id="gst-devtools" autogenargs="--disable-gtk-doc">
+  <autotools id="gst-devtools" autogenargs="--disable-gtk-doc --disable-introspection">
     <dependencies>
       <dep package="gstreamer"/>
       <dep package="gst-plugins-base"/>
