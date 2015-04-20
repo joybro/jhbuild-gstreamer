@@ -55,6 +55,8 @@
     <dependencies>
       <dep package="gstreamer"/>
       <dep package="gst-plugins-base"/>
+      <dep package="x264"/>
+      <dep package="lame"/>
     </dependencies>
     <branch repo="gstreamer" module="gst-plugins-ugly" checkoutdir="gst-plugins-ugly" tag="1.2.4"/>
   </autotools>

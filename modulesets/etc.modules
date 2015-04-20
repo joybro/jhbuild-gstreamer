@@ -14,6 +14,10 @@
       href="https://github.com/GNOME/libsoup/archive/"/>
   <repository type="tarball" name="webm.googlecode.com"
       href="https://webm.googlecode.com/files/"/>
+  <repository type="git" name="videolan"
+      href="git://git.videolan.org/"/>
+  <repository type="tarball" name="downloads.sourceforge.net"
+      href="http://downloads.sourceforge.net/"/>
 
   <autotools id="libogg">
     <branch repo="xiph"
@@ -88,6 +92,21 @@
       <dep type="path" name="yasm"/>
     </systemdependencies>
   </systemmodule>
+
+  <autotools id="x264"
+             autogen-template="./configure --prefix=%(prefix)s --enable-shared --disable-cli">
+    <branch repo="videolan" module="x264.git" tag="c8a773e" checkoutdir="x264"/>
+    <dependencies>
+      <dep package="yasm"/>
+    </dependencies>
+  </autotools>
+
+  <autotools id="lame">
+    <branch repo="downloads.sourceforge.net"
+            module="lame/lame-3.99.5.tar.gz"
+            version="3.99.5"
+            />
+  </autotools>
 
   <autotools id="libvpx"
              autogen-template="./configure --prefix=%(prefix)s --enable-vp8 --enable-vp9 --enable-shared --disable-static">
