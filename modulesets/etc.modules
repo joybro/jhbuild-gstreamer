@@ -18,6 +18,8 @@
       href="git://git.videolan.org/"/>
   <repository type="tarball" name="downloads.sourceforge.net"
       href="http://downloads.sourceforge.net/"/>
+  <repository type="tarball" name="yasm"
+      href="https://github.com/yasm/yasm/archive/"/>
 
   <autotools id="libogg">
     <branch repo="xiph"
@@ -86,12 +88,13 @@
     </branch>
   </autotools>
 
-  <systemmodule id="yasm">
-    <branch repo="system"/>
-    <systemdependencies>
-      <dep type="path" name="yasm"/>
-    </systemdependencies>
-  </systemmodule>
+  <autotools id="yasm">
+    <branch repo="yasm"
+            module="v1.2.0.tar.gz"
+            version="1.2.0"
+            checkoutdir="yasm">
+    </branch>
+  </autotools>
 
   <autotools id="x264"
              autogen-template="./configure --prefix=%(prefix)s --enable-shared --disable-cli">
