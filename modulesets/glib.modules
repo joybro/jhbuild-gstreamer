@@ -42,9 +42,6 @@
       <dep package="libffi"/>
       <dep package="zlib"/>
     </dependencies>
-    <suggests>
-      <dep package="glib-networking"/>
-    </suggests>
     <branch repo="github.gnome"
             module="glib/archive/2.43.90.tar.gz"
             version="2.43.90"
