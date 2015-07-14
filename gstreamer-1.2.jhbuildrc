@@ -15,6 +15,7 @@ autogenargs += ' --cache-file=' + checkoutroot + '/autoconf-cache'
 os.environ['INSTALL'] = os.path.expanduser('~/local/bin/install-check')
 os.environ['GST_VERSION'] = '1.2'
 
+addpath('PKG_CONFIG_PATH', os.path.join(prefix, 'lib64/pkgconfig'))
 addpath('PKG_CONFIG_PATH', '/usr/lib/pkgconfig')
 addpath('PKG_CONFIG_PATH', '/usr/share/pkgconfig')
 
