@@ -8,6 +8,8 @@
 
   <repository type="git" name="gstreamer"
       href="git://anongit.freedesktop.org/git/gstreamer/"/>
+  <repository type="git" name="slomo"
+      href="git://people.freedesktop.org/~slomo/"/>
 
   <autotools id="orc" autogenargs="--disable-gtk-doc">
     <branch repo="gstreamer" module="orc" checkoutdir="orc"/>
@@ -78,6 +80,18 @@
     <branch repo="gstreamer" module="gst-devtools.git" checkoutdir="gst-devtools" subdir="validate"/>
   </autotools>
 
+  <autotools id="gst-player" autogenargs="--disable-gtk-doc">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+      <dep package="gst-plugins-good"/>
+      <dep package="gst-plugins-bad"/>
+      <dep package="gst-plugins-ugly"/>
+      <dep package="gst-libav"/>
+    </dependencies>
+    <branch repo="slomo" module="gst-player" checkoutdir="gst-player"/>
+  </autotools>
+
   <metamodule id="gst">
     <dependencies>
       <dep package="gstreamer"/>
@@ -87,6 +101,7 @@
       <dep package="gst-plugins-ugly"/>
       <dep package="gst-libav"/>
       <dep package="gst-devtools"/>
+      <dep package="gst-player"/>
     </dependencies>
   </metamodule>
 
