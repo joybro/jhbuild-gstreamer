@@ -25,6 +25,7 @@
   <autotools id="gst-plugins-base" autogenargs="--disable-gtk-doc">
     <dependencies>
       <dep package="orc"/>
+      <dep package="libasound"/>
       <dep package="libogg"/>
       <dep package="libtheora"/>
       <dep package="libvorbis"/>

@@ -123,6 +123,13 @@
             checkoutdir="libvpx"/>
   </autotools>
 
+  <systemmodule id="libasound">
+    <branch repo="system"/>
+    <systemdependencies>
+      <dep type="c_include" name="alsa/asoundlib.h"/>
+    </systemdependencies>
+  </systemmodule>
+
   <systemmodule id="flex">
     <branch repo="system"/>
     <systemdependencies>
