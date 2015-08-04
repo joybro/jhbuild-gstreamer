@@ -35,6 +35,7 @@
 
   <autotools id="gst-plugins-good" autogenargs="--disable-gtk-doc">
     <dependencies>
+      <dep package="libjpeg"/>
       <dep package="libsoup"/>
       <dep package="libvpx"/>
       <dep package="gstreamer"/>

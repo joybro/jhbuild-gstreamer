@@ -111,6 +111,13 @@
             />
   </autotools>
 
+  <autotools id="libjpeg">
+    <branch repo="downloads.sourceforge.net"
+            module="libjpeg-turbo/libjpeg-turbo-1.4.1.tar.gz"
+            version="1.4.1"
+            />
+  </autotools>
+
   <autotools id="libvpx"
              autogen-template="./configure --prefix=%(prefix)s --enable-vp8 --enable-vp9 --enable-shared --disable-static">
     <dependencies>
