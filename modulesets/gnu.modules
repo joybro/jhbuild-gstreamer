@@ -28,7 +28,7 @@
     </branch>
   </autotools>
 
-  <autotools id="nettle">
+  <autotools id="nettle" autogen-template="./configure --prefix=%(prefix)s --enable-static">
     <dependencies>
       <dep package="gmp"/>
     </dependencies>
