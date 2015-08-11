@@ -9,9 +9,6 @@ prefix = os.path.join(_basepath, 'install-1.2')
 
 build_policy = 'updated-deps'
 
-autogenargs = ''
-autogenargs += ' --cache-file=' + checkoutroot + '/autoconf-cache'
-
 os.environ['GST_VERSION'] = '1.2'
 
 addpath('PKG_CONFIG_PATH', os.path.join(prefix, 'lib64/pkgconfig'))
