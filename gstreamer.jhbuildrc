@@ -18,3 +18,4 @@ from sys import platform as _platform
 if _platform == "darwin":
   os.environ['CFLAGS'] = '-Wno-typedef-redefinition -Wno-error=unused-command-line-argument'
   os.environ['OBJCFLAGS'] = '-Wno-error=deprecated-declarations'
+  skip = ['libasound']
