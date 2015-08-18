@@ -11,6 +11,7 @@ build_policy = 'updated-deps'
 
 os.environ['GST_VERSION'] = '1.2'
 
+addpath('PKG_CONFIG_PATH', os.path.join(prefix, 'lib/pkgconfig'))
 addpath('PKG_CONFIG_PATH', os.path.join(prefix, 'lib64/pkgconfig'))
 addpath('PKG_CONFIG_PATH', '/usr/lib/pkgconfig')
 addpath('PKG_CONFIG_PATH', '/usr/share/pkgconfig')
