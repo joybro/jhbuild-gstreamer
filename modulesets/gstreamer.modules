@@ -31,6 +31,7 @@
       <dep package="libogg"/>
       <dep package="libtheora"/>
       <dep package="libvorbis"/>
+      <dep package="libxv"/>
       <dep package="gstreamer"/>
     </dependencies>
     <branch repo="gstreamer" module="gst-plugins-base" checkoutdir="gst-plugins-base"/>

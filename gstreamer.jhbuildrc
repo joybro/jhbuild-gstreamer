@@ -9,6 +9,7 @@ prefix = os.path.join(_basepath, 'install')
 
 build_policy = 'updated-deps'
 
+addpath('PKG_CONFIG_PATH', os.path.join(prefix, 'lib/pkgconfig'))
 addpath('PKG_CONFIG_PATH', os.path.join(prefix, 'lib64/pkgconfig'))
 addpath('PKG_CONFIG_PATH', '/usr/lib/pkgconfig')
 addpath('PKG_CONFIG_PATH', '/usr/share/pkgconfig')
@@ -18,4 +19,4 @@ from sys import platform as _platform
 if _platform == "darwin":
   os.environ['CFLAGS'] = '-Wno-typedef-redefinition -Wno-error=unused-command-line-argument'
   os.environ['OBJCFLAGS'] = '-Wno-error=deprecated-declarations'
-  skip = ['libasound']
+  skip = ['libasound', 'libxv']

@@ -136,4 +136,10 @@
       <dep type="path" name="flex"/>
     </systemdependencies>
   </systemmodule>
+
+  <systemmodule id="libxv">
+    <pkg-config>xv.pc</pkg-config>
+    <branch repo="system"/>
+  </systemmodule>
+
 </moduleset>
