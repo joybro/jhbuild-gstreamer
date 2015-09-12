@@ -11,13 +11,7 @@
 
 ### Gstreamer shell mark
 
-You can add the following code to your bash configure file to distinguish your gstreamer shell from normal shell.
-```
-if [ -n "$UNDER_JHBUILD" ]; then
-  PS1="[jhbuild$GST_VERSION] $PS1"
-fi
-```
-
+Run 'setup-prompt.sh' to add jg shell indicator to your shell prompt.
 
 # Credit
 
